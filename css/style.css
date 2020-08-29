@@ -1,8 +1,9 @@
 * {
   margin: 0;
   padding: 0;
+  background-image: radial-gradient(circle, transparent, black), url("../img/background.jpg");
 }
 
 h1 {
-  color: red;
+  color: blue;
 }
