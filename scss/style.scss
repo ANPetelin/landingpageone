@@ -15,16 +15,18 @@ html {
     min-height: 100%;
     background: radial-gradient(circle at 0px 0px, rgba(0, 0, 0, 0.9), transparent), url('../img/background.jpg') no-repeat center top / cover;     
     color: $mainColor;
-    @include _600 {
-        background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), transparent) no-repeat center fixed, url('../img/background.jpg') no-repeat center top;
+    @include _1170 {
+        background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), transparent) no-repeat center fixed, url('../img/background.jpg') no-repeat center fixed;
+        background-size: cover
     }
 }
 
 .container {
     width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;    
-    @include _600 {
+    max-width: 1170px;
+    margin: 0 auto;  
+    padding: 0 20px;  
+    @include _768 {
         padding: 0 60px;
     }
 }
@@ -89,14 +91,14 @@ nav {
     & .left { 
         width: 70%;
         float: left;
-        @include _600 {
+        @include _768 {
             width: 100%;
         } 
     }    
     & .right {
         width: 29%;
         float: right;
-        @include _600 {
+        @include _768 {
             display: none;
         }
     }
@@ -107,12 +109,15 @@ nav {
     font-family: $fontFamilyGeorgia;
     font-size: 48px;
     font-weight: bold;
+    @include _768 {
+        padding-top: 60px;
+        margin-bottom: 20px;
+        white-space: pre-line;
+    }
     @include _600 {
         padding: 0;
         font-size: 35px;
         line-height: 1.5;
-        margin-bottom: 20px;
-        white-space: pre-line;
     }
 
 }
@@ -120,10 +125,13 @@ nav {
 .heading_two {
     padding: 25px 250px 30px 0;
     font-family: $fontFamilyArial;
-    font-size: 20px;
+    font-size: 20px;    
+    @include _768 {
+        padding: 60px 0;
+        white-space: pre-line;
+    }
     @include _600 {
         padding: 0;
-        white-space: pre-line;
         padding-bottom: 30px;
     }
 }
