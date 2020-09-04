@@ -1,23 +1,32 @@
+@import "media_mixin.scss";
+
+$mainColor: white;
+$colorShodow: rgba(255, 255, 255, 0.5);
+$fontFamilyArial: Arial, Helvetica, sans-serif;
+$fontFamilyGeorgia: Georgia, 'Times New Roman', Times, serif;
+
 * {
     margin: 0;
     padding: 0;
 }
 
-html, body {
+html {
     height: 100%;
-}
-
-.header {
-    background: radial-gradient(circle at 50px 0px, rgba(0, 0, 0, 0.9), transparent), url('../img/background.jpg') no-repeat center top / cover; 
     min-height: 100%;
-    color: white;
+    background: radial-gradient(circle at 0px 0px, rgba(0, 0, 0, 0.9), transparent), url('../img/background.jpg') no-repeat center top / cover;     
+    color: $mainColor;
+    @include _600 {
+        background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), transparent) no-repeat center fixed, url('../img/background.jpg') no-repeat center top;
+    }
 }
 
 .container {
     width: 100%;
     max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 10px;
+    margin: 0 auto;    
+    @include _600 {
+        padding: 0 60px;
+    }
 }
 
 .clearfix:after {
@@ -25,19 +34,29 @@ html, body {
     display: table;
     width: 100%;
     clear: both;
+    @include _600 {
+        display: none;
+    }
 }
 
 .company {
     margin-top: 50px;
     float: left;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: $fontFamilyArial;
     font-size: 32px;
+    @include _600 {
+        float: none;
+        text-align: center;
+    }
 }
 
 nav {
     margin-top: 50px;
     float: right;
-
+    @include _600 {
+        float: none;
+        margin-top: 0;
+    }
 }
 
 .menu {
@@ -45,57 +64,84 @@ nav {
     li {
         float: right;
         display: block;
+        @include _600 {
+            float: none;
+            text-align: center;
+            margin-top: 20px;
+        }
     }
     a {
-        color: white;
+        color: $mainColor;
         padding: 0 10px 0 30px;
         text-decoration: none;
         text-transform: uppercase;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: $fontFamilyArial;
         font-size: 14px;
     }
 }
 
-.block__heading {
-    margin-top: 40px;  
+.block__heading {    
+    margin-top: 40px; 
+    @include _600 {
+        text-align: center;
+        margin-top: 10px;
+    } 
     & .left { 
         width: 70%;
-        float: left; 
+        float: left;
+        @include _600 {
+            width: 100%;
+        } 
     }    
     & .right {
         width: 29%;
         float: right;
+        @include _600 {
+            display: none;
+        }
     }
 }
 
 .heading_one {
     padding-right: 50px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: $fontFamilyGeorgia;
     font-size: 48px;
     font-weight: bold;
+    @include _600 {
+        padding: 0;
+        font-size: 35px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        white-space: pre-line;
+    }
+
 }
 
 .heading_two {
-    padding-right: 250px;
-    padding-top: 25px;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 25px 250px 30px 0;
+    font-family: $fontFamilyArial;
     font-size: 20px;
+    @include _600 {
+        padding: 0;
+        white-space: pre-line;
+        padding-bottom: 30px;
+    }
 }
 
 .block__heading__buttom {
-    margin-top: 45px;
+    margin-top: 15px;
     height: 75px;
     width: 285px;
     border-radius: 37px;
     background: linear-gradient(to top, #F9A825, #FFEB3B);
     font-size: 25px;
-    color: white;
+    color: $mainColor;
     border: 0px;
     outline: none;
     box-shadow: 0px 5px 5px rgb(249,168,37, 0.5);
     transition: .4s;
     &:hover, &:active {
-        margin-top: 41px;
+        margin-top: 12px;
         outline: none;
         color: #3D3D3D;
         box-shadow: 0px 10px 20px rgb(249,168,37, 0.9);
@@ -112,9 +158,8 @@ nav {
         45deg,
         transparent,
         transparent 15px,
-        rgba(255, 255, 255, 0.5) 15px,
-        rgba(255, 255, 255, 0.5) 30px);
-    box-shadow: inset 2px 2px 10px rgba(255, 255, 255, 0.5),
+        $colorShodow 15px,
+        $colorShodow 30px);
+    box-shadow: inset 2px 2px 10px $colorShodow;
 }
-
 
