@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: radial-gradient(circle, transparent, black), url("../img/background.jpg") no-repeat center top/cover;
+  height: 1000px;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  width: 100%;
+  clear: both;
+}
+
+.company {
+  margin-top: 50px;
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+}
+
+nav {
+  margin-top: 50px;
+  float: right;
+}
+
+.menu {
+  display: block;
+}
+.menu li {
+  float: right;
+  display: block;
+}
+.menu a {
+  color: white;
+  padding: 0 10px 0 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.block__heading {
+  padding-top: 60px;
+}
+.block__heading .left {
+  width: 70%;
+}
+.block__heading .right {
+  width: 30%;
+}
+
+.heading_one {
+  padding-right: 50px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.heading_two {
+  padding-right: 250px;
+  padding-top: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.block__heading__buttom {
+  margin-top: 45px;
+  height: 75px;
+  width: 285px;
+  border-radius: 37px;
+  background: linear-gradient(to top, #F9A825, #FFEB3B);
+  font-size: 25px;
+  color: white;
+  border: 0px;
+  outline: none;
+  box-shadow: 0px 5px 5px rgba(249, 168, 37, 0.5);
+  transition: 0.4s;
+}
+.block__heading__buttom:hover, .block__heading__buttom:active {
+  margin-top: 41px;
+  outline: none;
+  color: #3D3D3D;
+  box-shadow: 0px 10px 20px rgba(249, 168, 37, 0.9);
+  transition: 0.4s;
+}
